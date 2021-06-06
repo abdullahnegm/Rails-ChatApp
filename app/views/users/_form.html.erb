@@ -1,0 +1,24 @@
+<%= form_with( scope: :user, url: create_user_path) do |f| %>
+    <div class="col-md mb-3 form-check form-floating">
+        <div class="form-floating">
+            <%= f.text_field :name, class: "form-control", placeholder: "Username" %>
+            <%= f.label :name %>
+        </div>
+    </div>
+    <div class="col-md mb-3 form-check form-floating">
+        <div class="form-floating">
+            <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+            <%= f.label :Email %>
+        </div>
+    </div>
+    <div class="col-md mb-3 form-check form-floating">
+        <div class="form-floating">
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+            <%= f.label :Password %>
+        </div>
+    </div>
+
+    <div class="form-check text-center">
+        <%= f.submit 'Sign up', class: "btn btn-primary form-control" %>
+    </div>
+<% end %>

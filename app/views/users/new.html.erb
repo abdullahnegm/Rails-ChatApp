@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'login' %>
+<div class="container mt-5">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <h1><%= msg %></h1>
+    </div>
+  <% end %>
+  <div class="row"> 
+    <div class="col-5 text-center rounded border border-dark bg-light p-5 login">
+        <h1 class="font-weight-bold">Sign in</h1>
+        <%= render 'sessions/form' %>
+    </div>
+    <div class="col-5 text-center rounded border border-dark bg-light p-5 login">
+        <h1 class="font-weight-bold">Sign up</h1>
+        <%= render 'users/form' %>
+    </div>
+  </div>
+</div>

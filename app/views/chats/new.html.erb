@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag 'chat' %>
+<div class="chat">
+
+  <div class="chat__sidebar">
+    <h3>People</h3>
+    <div id="users"></div>
+  </div>
+
+  <div class="chat__main">
+    <ol id="messages" class="chat__messages">
+      <%= render @messages %>
+    </ol>
+
+    <div class="chat__footer">
+      <%= form_with model: @chat, url: message_path, local: false do |f| %>
+        <%= f.text_field :message,id: "message", placeholder: 'Message', autocomplete: true, autofocus: true %>
+        <%= f.submit 'Send', id: 'submit-btn' %>
+      <% end %>
+      <button id="send-location">Send location</button>
+    </div>
+  </div>
+
+</div>
